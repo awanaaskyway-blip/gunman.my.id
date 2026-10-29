@@ -1,5 +1,3 @@
-import ReflexGame from './ReflexGame.jsx'
-
 const dragonCityPoints = [
   {
     title: 'Bangun Kota Naga',
@@ -15,21 +13,6 @@ const dragonCityPoints = [
   },
 ]
 
-const reasons = [
-  {
-    title: 'Ada strategi',
-    text: 'Tidak asal main: ada pilihan naga, kombinasi, dan cara mengurus kota yang bikin penasaran.',
-  },
-  {
-    title: 'Ada koleksi',
-    text: 'Rasanya seru saat berhasil mendapatkan naga baru dan melihat koleksinya makin lengkap.',
-  },
-  {
-    title: 'Buat santai',
-    text: 'Cocok dimainkan santai di sela waktu luang, sebentar-sebentar tapi tetap seru.',
-  },
-]
-
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-50">
@@ -41,7 +24,6 @@ export default function App() {
           <nav className="flex gap-4 text-sm text-slate-300 sm:gap-6">
             <a className="hover:text-white" href="#tentang">Tentang</a>
             <a className="hover:text-white" href="#dragon-city">Dragon City</a>
-            <a className="hover:text-white" href="#tes-refleks">Tes Refleks</a>
           </nav>
         </div>
       </header>
@@ -53,15 +35,14 @@ export default function App() {
               Halo, saya Fake
             </p>
             <h1 className="mt-5 max-w-3xl text-4xl leading-tight font-bold drop-shadow-lg sm:text-6xl">
-              Saya suka main game, terutama{' '}
+              Saya main{' '}
               <span className="bg-gradient-to-r from-emerald-300 to-amber-300 bg-clip-text text-transparent">
                 Dragon City
               </span>
               .
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-100 drop-shadow">
-              Ini halaman profil sederhana saya. Di sini saya cerita sedikit tentang game yang paling sering saya
-              mainkan, dan ada permainan kecil untuk mengetes refleks.
+              Ini halaman profil saya tentang Dragon City, game yang paling sering saya mainkan.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -69,12 +50,6 @@ export default function App() {
                 className="rounded-full bg-emerald-400 px-5 py-2.5 font-semibold text-slate-950 shadow-lg transition hover:bg-emerald-300"
               >
                 Lihat Dragon City
-              </a>
-              <a
-                href="#tes-refleks"
-                className="rounded-full border border-white/30 bg-slate-950/40 px-5 py-2.5 font-semibold backdrop-blur transition hover:border-white/60"
-              >
-                Coba tes refleks
               </a>
             </div>
           </div>
@@ -84,16 +59,11 @@ export default function App() {
           <section id="tentang" className="scroll-mt-24 py-12">
             <h2 className="text-2xl font-bold sm:text-3xl">Tentang Saya</h2>
             <p className="mt-4 max-w-3xl leading-relaxed text-slate-300">
-              Nama saya Fake. Saya suka main game di waktu luang. Game yang paling saya mainkan saat ini adalah
-              Dragon City, game dari Socialpoint tentang membangun kota naga, mengumpulkan naga, dan melatihnya.
-              Halaman ini dibuat dengan React, Vite, dan Tailwind CSS.
+              Nama saya Fake. Game yang paling saya mainkan saat ini adalah Dragon City, game dari Socialpoint
+              tentang membangun kota naga, mengumpulkan naga, dan melatihnya.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               <span className="rounded-full bg-slate-800 px-3 py-1 text-sm">Dragon City</span>
-              <span className="rounded-full bg-slate-800 px-3 py-1 text-sm">React</span>
-              <span className="rounded-full bg-slate-800 px-3 py-1 text-sm">Vite</span>
-              <span className="rounded-full bg-slate-800 px-3 py-1 text-sm">Tailwind CSS</span>
-              <span className="rounded-full bg-slate-800 px-3 py-1 text-sm">gunman.my.id</span>
             </div>
           </section>
 
@@ -120,43 +90,12 @@ export default function App() {
               resmi Dragon City.
             </p>
           </section>
-
-          <section className="border-t border-white/10 py-12">
-            <h2 className="text-2xl font-bold sm:text-3xl">Kenapa Saya Suka Main Game</h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {reasons.map((reason) => (
-                <article
-                  key={reason.title}
-                  className="rounded-2xl border border-white/10 bg-gradient-to-b from-slate-900 to-slate-900/40 p-5 transition hover:-translate-y-1 hover:border-emerald-300/40"
-                >
-                  <h3 className="font-semibold">{reason.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-300">{reason.text}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section id="tes-refleks" className="scroll-mt-24 border-t border-white/10 py-12">
-            <h2 className="text-2xl font-bold sm:text-3xl">Tes Refleks: 10 Ronde</h2>
-            <p className="mt-4 max-w-3xl leading-relaxed text-slate-300">
-              Klik kotaknya secepat mungkin begitu warnanya berubah. Hasil tiap ronde dicatat di bawah, dan
-              permainan selesai setelah 10 ronde.
-            </p>
-            <div className="mt-6 rounded-3xl border border-white/10 bg-slate-900/60 p-4 shadow-xl sm:p-6">
-              <ReflexGame />
-            </div>
-          </section>
         </div>
       </main>
 
       <footer className="border-t border-white/10 bg-gradient-to-r from-emerald-950/60 via-slate-950 to-amber-950/40">
-        <div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-8 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <p>Dibuat dengan React, Vite, dan Tailwind CSS.</p>
-          <p>
-            <a className="underline hover:text-white" href="https://github.com/awanaaskyway-blip/gunman.my.id">
-              github.com/awanaaskyway-blip/gunman.my.id
-            </a>
-          </p>
+        <div className="mx-auto max-w-5xl px-4 py-8 text-sm text-slate-400 sm:px-6">
+          <p>Fake — Dragon City.</p>
         </div>
       </footer>
     </div>
